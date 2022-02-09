@@ -1,0 +1,26 @@
+        body {background-color: beige;}
+
+        img {image-rendering: pixelated;}
+        h1 {font-family: Rockwell;
+            background-color: lightskyblue;
+            }
+    
+        h2 {font-family: Rockwell;}
+        h3 {font-family: Rockwell;}
+        p {font-family: Rockwell;}
+        h2 {text-align: center;}
+        h3 {text-align: center;}
+        h1 {text-align: center;}
+        p {text-align: center;}
+        ul {text-align:justify;
+            position: fixed;}
+        .pics {
+            display:block;
+            text-align: center;
+        }
+        .square {position: fixed; 
+                width: 150px; 
+                height: 150px; 
+                z-index: -1;
+                background-color: grey;
+                background-blend-mode:difference;}
