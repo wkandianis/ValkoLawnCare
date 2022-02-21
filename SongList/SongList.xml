@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="StyleSheet.css"?>
+<SongList>
+    <Song>
+        <Title>Super Gremlin</Title>
+        <Artist>Kodak Black</Artist>
+        <Genre>Hip-Hop</Genre>
+        <Year>2021</Year>
+    </Song>
+    <Song>
+        <Title>Headlines</Title>
+        <Artist>Drake</Artist>
+        <Genre>Hip-Hop</Genre>
+        <Year>2011</Year>
+    </Song>
+    <Song>
+        <Title>The Motto</Title>
+        <Artist>Drake</Artist>
+        <Genre>Hip-Hop</Genre>
+        <Year>2011</Year>
+    </Song>
+    <Song>
+        <Title>You Belong With Me</Title>
+        <Artist>Taylor Swift</Artist>
+        <Genre>Pop</Genre>
+        <Year>2008</Year>
+    </Song>
+    <Song>
+        <Title>22</Title>
+        <Artist>Taylor Swift</Artist>
+        <Genre>Pop</Genre>
+        <Year>2012</Year>
+    </Song>
+    <Song>
+        <Title>Shake It Off</Title>
+        <Artist>Taylor Swift</Artist>
+        <Genre>Pop</Genre>
+        <Year>2014</Year>
+    </Song>
+    <Song>
+        <Title>Folsom Prison Blues</Title>
+        <Artist>Johnny Cash</Artist>
+        <Genre>Country</Genre>
+        <Year>1957</Year>
+    </Song>
+    <Song>
+        <Title>I Walk The Line</Title>
+        <Artist>Johnny Cash</Artist>
+        <Genre>Country</Genre>
+        <Year>1957</Year>
+    </Song>
+    <Song>
+        <Title>Heart On Fire</Title>
+        <Artist>Eric Church</Artist>
+        <Genre>Country</Genre>
+        <Year>2021</Year>
+    </Song>
+    <Song>
+        <Title>Highway To Hell</Title>
+        <Artist>AC/DC</Artist>
+        <Genre>Rock</Genre>
+        <Year>1979</Year>
+    </Song>
+    <Song>
+        <Title>Shoot To Thrill</Title>
+        <Artist>AC/DC</Artist>
+        <Genre>Rock</Genre>
+        <Year>1980</Year>
+    </Song>
+    <Song>
+        <Title>Hells Bells</Title>
+        <Artist>AC/DC</Artist>
+        <Genre>Rock</Genre>
+        <Year>1980</Year>
+    </Song>
+    <Song>
+        <Title>Back In Black</Title>
+        <Artist>AC/DC</Artist>
+        <Genre>Rock</Genre>
+        <Year>1980</Year>
+    </Song>
+    <Song>
+        <Title>Someone Like You</Title>
+        <Artist>Adele</Artist>
+        <Genre>Pop</Genre>
+        <Year>2011</Year>
+    </Song>
+    <Song>
+        <Title>We Found Love</Title>
+        <Artist>Rihanna</Artist>
+        <Genre>Pop</Genre>
+        <Year>2011</Year>
+    </Song>
+    <Song>
+        <Title>Look At Me Now</Title>
+        <Artist>Chris Brown</Artist>
+        <Genre>Hip-Hop</Genre>
+        <Year>2011</Year>
+    </Song>
+    <Song>
+        <Title>Country Girl</Title>
+        <Artist>Luke Bryan</Artist>
+        <Genre>Country</Genre>
+        <Year>2011</Year>
+    </Song>
+    <Song>
+        <Title>In The End</Title>
+        <Artist>Linkin Park</Artist>
+        <Genre>Rock</Genre>
+        <Year>2000</Year>
+    </Song>
+    <Song>
+        <Title>I Want It That Way</Title>
+        <Artist>BackStreet Boys</Artist>
+        <Genre>Pop</Genre>
+        <Year>1999</Year>
+    </Song>
+    <Song>
+        <Title>All Star</Title>
+        <Artist>Smash Mouth</Artist>
+        <Genre>Rock</Genre>
+        <Year>1999</Year>
+    </Song>
+
+</SongList>

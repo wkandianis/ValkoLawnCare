@@ -1,0 +1,29 @@
+
+Song {
+     color: black;
+     font-size: 30px;
+     text-align: center;    
+     display: block;
+     background-color: floralwhite;
+}
+
+Artist {
+    color: rgb(153, 50, 50);
+    font-size: 20px;
+    
+    display: block;
+}
+
+Genre {
+    color: rgb(153, 50, 50);
+    font-size: 20px;
+   
+    display: block;
+}
+
+Year {
+    color: rgb(153, 50, 50);
+    font-size: 20px;
+    
+    display: block;
+}
