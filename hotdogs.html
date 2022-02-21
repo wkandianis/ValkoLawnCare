@@ -1,0 +1,45 @@
+<html>
+<title>Joe's Hotdogs</title>
+<style>
+    body { background-color: bisque;}
+</style>
+<h1>Welcome to Joe's Hotdogs!</h1>
+<h2>Here is your order:</h2>
+
+<script language="javascript">
+    dogs = prompt("How many hotdogs would you like to order?")
+    fries = prompt("How many orders of french fries would you like to order?")
+    drinks = prompt("How many drinks would you like to order?")
+    total = (parseInt(dogs) * 3.75) + (parseInt(fries) * 2.00) + (parseInt(drinks) * 1.80) 
+    if(dogs > 0) {
+        document.write("Hotdogs: " + dogs)
+        document.write("<br />")
+    }
+    if(fries > 0) {
+        document.write("Fries: " + fries)
+        document.write("<br />")
+    }
+    if(drinks > 0) {
+        document.write("Drinks: " + drinks)
+        document.write("<br />")
+    }
+    if (total > 20) {
+        discount = total * .10
+        total = total - discount
+        document.write("You saved $" + discount.toFixed(2) + " on this order!")
+        document.write("<br />")
+    }
+    tax = total * 0.0625  
+    document.write("Subtotal: $" + total.toFixed(2))
+    document.write("<br />")
+    document.write("Tax: $" + tax.toFixed(2))
+    document.write("<br />")
+    total = total + tax
+    document.write("Your total is: $" + total.toFixed(2))
+
+</script>
+
+
+
+
+</html>
