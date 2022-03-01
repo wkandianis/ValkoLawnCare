@@ -1,0 +1,135 @@
+<html>
+    <title>Lottery</title>
+    <style>
+        
+        body { 
+            background-color: rosybrown;
+            font-size: larger;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            }
+            h1 {
+                text-align: center;
+            }
+            h4 {
+                text-align: center;
+            }
+        
+    </style>
+    <h1>Welcome to the Lottery!</h1>
+    <h4>Best of luck to you!</h4>
+    <script language="javascript">
+        pick = new Array(5);
+        min = Math.ceil(1);
+        max = Math.floor(48);   
+        max1 = Math.floor(18);
+
+        // constant values for game
+        const winning = [12, 15, 24, 35, 48];
+        const luckyNum = 3;
+        const lucky = Math.floor(Math.random() * (max1 - min) + min);
+
+        document.write("Your numbers BEFORE sorting are: ");
+        // put random numbers in array
+        for(let i = 0; i < 5; i++) {
+            pick[i] = Math.floor(Math.random() * (max - min) + min);           
+            document.write(pick[i] + " ");
+            
+        }
+        document.write("<br/>");
+        document.write("Your numbers AFTER sorting are: ");
+        // sort and then print array
+        pick =  pick.sort(function(a, b){return a - b});
+        for(let i = 0; i < 5; i++) {     
+            document.write(pick[i] + " ");
+           
+        }
+
+        document.write("<br/>");
+        // print array with winning numbers
+        document.write("Winnning Numbers: ");
+        for(let i = 0; i < 5; i++) {     
+            document.write(winning[i] + " ");
+        }
+        document.write("<br/>");
+        document.write("Lucky Number: " + luckyNum);
+        document.write("<br/>");
+        document.write("Your Lucky Number: " + lucky);
+        
+        let total = 0;
+        // find total amount of matches and print
+        for(let i = 0; i < 5; i++) {
+            if (winning.includes(pick[i])) {
+                total++;
+            }
+        }
+        document.write("<br/>");
+        document.write("Total Matches: " + total);      
+        document.write("<br/>");
+
+        let luckyMatch = false;
+        if (lucky == luckyNum) {
+            document.write("You got the lucky number!");
+            luckyMatch = true;
+        } else {
+            document.write("You did NOT get the lucky number!");
+            luckyMatch = false;
+        }
+
+        let payout = 0;
+        document.write("<br/>")
+        document.write("Your payout: $")
+        // find payout
+        if(total == 0) {
+            if(luckyMatch) {
+                payout = 4;
+            } 
+            document.write(payout)
+        }
+        if(total == 1) {
+            if(luckyMatch) {
+                payout = 6;
+            } 
+            document.write(payout)
+        }
+        if(total == 2) {
+            if(luckyMatch) {
+                payout = 25;
+            } else {
+                payout = 3;
+            }
+            document.write(payout)
+        }
+        if(total == 3) {
+            if(luckyMatch) {
+                payout = 150;
+            } else {
+                payout = 20;
+            }
+            document.write(payout)
+        }
+        if(total == 4) {
+            if(luckyMatch) {
+                payout = 5000;
+            } else {
+                payout = 200;
+            }
+            document.write(payout)
+        }
+        if(total == 5) {
+            if(luckyMatch) {
+                payout = 7000;
+                document.write(payout + " a week for LIFE!")
+            } else {
+                payout = 25000;
+                document.write(payout + " a year for LIFE!")
+            }
+            
+        }
+       
+        
+    </script>
+
+
+
+</html>
