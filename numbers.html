@@ -1,0 +1,145 @@
+<html>
+
+<style>
+    header {
+        font-size: 60;
+        font-family: monospace;
+        text-align: center;
+        background-color: peru;
+    }
+    form {
+        text-align: center;
+        font-size: 20;
+    }
+    input[type=text] {
+  
+        padding: 5px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+    input[type=dropdown] {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+    .container {
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
+    }
+    #span {
+            display: block;
+            height: px;
+            width: 350px;
+            line-height: 30px;
+
+            -moz-border-radius: 30px; /* or 50% */
+            border-radius: 30px; /* or 50% */
+
+            background-color: peru;
+            color: black;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 10px;
+    }
+    #span2 {
+            display: block;
+            height: px;
+            width: 350px;
+            line-height: 30px;
+
+            -moz-border-radius: 30px; /* or 50% */
+            border-radius: 30px; /* or 50% */
+
+            background-color: peru;
+            color: black;
+            text-align: center;
+            margin: auto;
+           
+    }
+</style>
+
+<header>Amicable Numbers!</header>
+<form action="signup.html" method="post" id="signup">
+        <label for="num1">First number:</label><br>
+        <input type="text" id="num1" name="num1"><br>
+        <label for="num2">Second number:</label><br>
+        <input type="text" id="num2" name="num2"><br>
+        <input type="button" name="submit" value="Submit" onclick="myFun()"/>
+</form>
+<div id="container">
+
+    <div id="span">
+
+    </div>
+
+</div>
+<div id="container">
+
+        <div id="span2">
+    
+        </div>
+    
+</div>
+<script language="javascript">
+
+   function myFun() {
+    
+        var num1 = document.getElementById("num1");
+        var num2 = document.getElementById("num2");
+        num1 = parseInt(num1.value);
+        num2 = parseInt(num2.value);
+        arr1 = findFactors(num1);
+        arr2 = findFactors(num2);
+        var sum1 = 0;
+        var sum2 = 0;
+        for(let i = 0; i < arr1.length; i++) {
+          
+            sum2 += arr1[i];
+        }
+        for(let i = 0; i < arr2.length; i++) {
+            sum1 += arr2[i];
+        }
+        let am = false;
+       
+        if (sum1 == num1 && sum2 == num2) {
+            am = true;
+        }
+        
+        if(am) {
+           document.getElementById("span").innerHTML = "The numbers " + num1 + " and " + num2 + " are amicable!";
+        } else {
+            document.getElementById("span").innerHTML = "The numbers " + num1 + " and " + num2 + " are NOT amicable!";
+        }
+         document.getElementById("span2").innerHTML = "The factors of " + num1 + " are " + arr1 + "<br>" +
+         "The factors of " + num2 + " are " + arr2;
+
+   }
+    
+
+
+    function findFactors(a) {
+        var i = 0;
+        var arr = new Array();
+   
+        while(i < (a/2) + 1) {
+            if(isFactor(i, a)) {
+                arr.push(i);
+            }
+            i++;
+        }
+        return arr;
+    }
+
+    function isFactor(x, y) {
+  
+        if (y % x == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+</script>
+
+
+</html>
