@@ -1,0 +1,27 @@
+<html>
+  
+<body>
+    <div id="string"></div>
+    <div id="all_songs"></div>
+    <div id="genres"></div>
+
+</body>
+<script src="jquery-3.6.0.js"></script>
+<script>
+    $.getJSON("file:///Users/will/Desktop/SongList.json", function(data) {
+        $("string").html(JSON.stringify(data));
+        for (let i = 0; i < data.length; i++) {
+            $("#all_songs").append(data[i] + "<br/>");
+           
+        }
+    }
+    
+    
+    
+    );
+
+
+
+</script>
+ 
+</html>

@@ -1,0 +1,83 @@
+
+{
+  "Song List": [
+    {
+        "Artist": "Kodak Black",
+        "Title": "Super Gremlin",
+        "Genre": "Hip-Hop",
+        "Released": "2021"
+    }, 
+    {
+        "Artist": "Drake",
+        "Title": "Headlines",
+        "Genre": "Hip-Hop",
+        "Released": "2011"
+    }, 
+    {
+        "Artist": "The Motto",
+        "Title": "Drake",
+        "Genre": "Hip-Hop",
+        "Released": "2011"
+    }, 
+    {
+        "Artist": "Taylor Swift",
+        "Title": "You Belong With Me",
+        "Genre": "Pop",
+        "Released": "2008"
+    }, 
+    {
+        "Artist": "Taylor Swift",
+        "Title": "22",
+        "Genre": "Pop",
+        "Released": "2012"
+    }, 
+    {
+        "Artist": "Johnny Cash",
+        "Title": "Folsom Prison Blues",
+        "Genre": "Country",
+        "Released": "1967"
+    }, 
+    {
+        "Artist": "AC/DC",
+        "Title": "Highway to Hell",
+        "Genre": "Rock",
+        "Released": "1979"
+    }, 
+    {
+        "Artist": "Eric Church",
+        "Title": "Heart On Fire",
+        "Genre": "Country",
+        "Released": "2021"
+    }, 
+    {
+        "Artist": "AC/DC",
+        "Title": "Shoot To Thrill",
+        "Genre": "Rock",
+        "Released": "1980"
+    }, 
+    {
+        "Artist": "AC/DC",
+        "Title": "Hells Bells",
+        "Genre": "Rock",
+        "Released": "1980"
+    }, 
+    {
+        "Artist": "Adele",
+        "Title": "Someone Like You",
+        "Genre": "Pop",
+        "Released": "2011"
+    },
+    {
+        "Artist": "Rihanna",
+        "Title": "We Found Love",
+        "Genre": "Pop",
+        "Released": "2011"
+    },
+    {
+        "Artist": "Chris Brown",
+        "Title": "Look At Me Now",
+        "Genre": "Hip-Hop",
+        "Released": "2011"
+    }
+    ]
+}
