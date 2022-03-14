@@ -11,6 +11,7 @@
     $.getJSON("https://wkandianis.github.io/SongList.JSON", function(data) {
         $("#string").html(JSON.stringify(data));
         for (let i = 0; i < data.length; i++) {
+          $("#all_songs").append("HI" + "<br/>");
         //    $("#all_songs").append(data[i] + "<br/>");
        //     $("#all_songs").append("<br/><br/>");
        //     $("#genres").append(data[i].Genre + "<br/>");
