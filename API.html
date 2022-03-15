@@ -1,0 +1,116 @@
+<html>
+<style>
+
+#span {
+            display: block;
+            height: px;
+            width: 100%;
+            line-height: 30px;
+
+            -moz-border-radius: 30px; /* or 50% */
+            border-radius: 30px; /* or 50% */
+
+            background-color: black;
+            color: beige;
+            text-align: center;
+            font-size: 2em;
+        }
+
+#out {
+    display: block;
+    height: px;
+    width: 100%;
+    line-height: 30px;
+
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+
+    background-color: black;
+    color: beige;
+    text-align: center;
+    font-size: 2em;
+    }
+#form {
+        text-align: center;
+}
+h1 {
+    text-align: center;
+    color: beige;
+    background-color: black;
+}
+body {
+    background-color: grey;
+}
+</style>
+<body>
+    <h1>Predict Your Age!</h1>
+    <form id="form">
+
+    <label for="name">Enter Name:</label>
+    <input type="text" id="name" placeholder="Press 'Go' Twice">
+    <input type="button" id="button" value="Go" onclick="myFunc()">
+
+    </form>
+    <div id="out"></div>
+
+</body>
+<script language="javascript">
+
+    function myFunc() {
+        var nameValue = document.getElementById("name").value;
+        const link = "https://api.agify.io?name=" + nameValue;
+        res = 
+        fetch(link)
+        .then (res => res.text())
+        .then (data => 
+        {
+            data = JSON.parse(data)
+            name = data.name;
+            age = data.age;
+        })
+
+        document.getElementById("out").innerHTML = ("According to Agify.io, the predicted age of someone with the name of " + name + " is " + age);
+    }
+    
+    
+
+</script>
+
+
+<div id="container">
+
+    <div id="span">
+        <p>The API I chose to use is called Agify.io, which when given a name, predicts the age of the person with that name.</p>
+    </div>
+</div>
+
+<div id="container">
+
+    <div id="span">
+        <p>Source: https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/</p>
+    </div>
+</div>
+
+<div id="container">
+
+    <div id="span">
+        <p>The only option this API takes is the name to determine the age. I thought it would be a little boring to have the 
+            same name every time, so I tried to make it so you can enter a name and then learn the predicted age. It seems
+            to work but the only thing I can't figure out is why you need to press the "Go" button twice. If I had more time
+            to do this assignment that is what I would fix :)
+        </p>
+
+    </div>
+</div>
+
+<div id="container">
+
+    <div id="span">
+        <p>To be completely honest, this isn't a super useful API but I thought it was cool. Two applications of the API could 
+            be for someone doing some kind of census data project where they can find trends in names and age groups. Another
+            application could be someone in the baby naming business who needs to know what names are in for the new generation
+            and what names should be reserved for old people.
+        </p>
+    </div>
+</div>
+</html>
