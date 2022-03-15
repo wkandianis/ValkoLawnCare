@@ -1,28 +1,77 @@
 <html>
-  
+  <style>
+      body {
+        background-color: aquamarine;
+      }
+      h1 {
+          text-align: center;
+          background-color: cadetblue;
+          position: relative;
+      }
+      div {
+          text-align: center;
+          font-family: monospace;
+          font-size: large;
+      }
+
+      #form {
+          background-color: cadetblue;
+      }
+  </style>
 <body>
-    <div id="string"></div>
-    <div id="all_songs"></div>
-    <div id="genres"></div>
+
+    <title>CS 20 JSON</title>
+    <h1>Song List</h1>
+    <div id="serial"></div>
+    <div id="songs"></div>
+
+    <div id="select"></div>
+    <div id="forms">
+    <form id="form">
+        Select Genre:
+        <select id="menu">
+            <option value="none">No Selection</option>
+            <option value="Hip-Hop">Hip-Hop</option>
+            <option value="Country">Country</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+        </select>
+        <input type="button" id="select" value="Filter">
+        <div id="genre"></div>
+    </div>
+    </form>
 
 </body>
 <script src="jquery-3.6.0.js"></script>
 <script>
-    $.getJSON("https://wkandianis.github.io/SongList.JSON", function(data) {
-        $("#string").html(JSON.stringify(data));
-        for (let i = 0; i < data.length; i++) {
-          $("#all_songs").append("HI" + "<br/>");
-        //    $("#all_songs").append(data[i] + "<br/>");
-       //     $("#all_songs").append("<br/><br/>");
-       //     $("#genres").append(data[i].Genre + "<br/>");
-           
+     $.getJSON("https://wkandianis.github.io/SongList.JSON", function(data) {
+        $("#serial").html(JSON.stringify(data) + "<br/>");
+        $("#serial").append("<br/>");
+        
+        for (song in data) {
+            for (s in song) {
+                $("#songs").append("Title: " + data[song][s].Title + "<br/>");
+                $("#songs").append("Artist: " + data[song][s].Artist + "<br/>");
+                $("#songs").append("Genre: " + data[song][s].Genre + "<br/>");
+                $("#songs").append("Released: " + data[song][s].Released + "<br/>");
+                $("#songs").append("<br/>");
+            }
+       
         }
-    }
-    
-    
-    
-    );
+          $(document).on("click", "#select", function() {
+      
+              $("#genre").html("");
+                for(song in data) {
+                    for(s in song) {
+                        if(data[song][s].Genre == $("#menu").val()) {
+                            $("#genre").append(data[song][s].Title + "<br/>");
+                        }
+                    }
+                }
 
+        });
+
+    });
 
 
 </script>
