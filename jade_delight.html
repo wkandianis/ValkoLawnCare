@@ -10,8 +10,6 @@
     display: none;
 }
 
-
-
 label {
   text-align:right;
   
@@ -45,7 +43,7 @@ menuItems = new Array(
 function makeSelect(name, minRange, maxRange)
 {
 	var t= "";
-	t = "<select name='" + name + "' size='1' onChange='fillCost()'>";
+	t = "<select name='" + name + "' size='1'>";
 	for (j=minRange; j<=maxRange; j++)
 	   t += "<option>" + j + "</option>";
 	t+= "</select>"; 
@@ -95,148 +93,142 @@ function td(content, className="")
 </script>
 
 
+</table>
+
 <script>
 
-
-
-
-
-function deliver(){
-    return document.getElementsByName("p_or_d")[1].checked;
-}
-
-
-function showDeliverInfo(){
-
-    if (deliver() == true){
-        document.getElementsByClassName("deliveryInfo")[0].style.display = "block";
-        document.getElementsByClassName("deliveryInfo")[1].style.display = "block";
-    } else {
-        document.getElementsByClassName("deliveryInfo")[0].style.display = "none";
-        document.getElementsByClassName("deliveryInfo")[1].style.display = "none";
-    }
-}
-
-function fillCost(){
-
-var subtotal = 0;
-var quant = 0;
-var myCost = 0;
-var tax = 0;
-var total = 0;
-for (i = 0; i < menuItems.length; i++){
-	quant = document.getElementsByName("quan" + i)[0].value;
-
-	if (parseInt(quant) != 0){
-		myCost = (parseInt(quant) * menuItems[i].cost);
-		myCost = myCost.toFixed(2);
-		document.getElementsByName("cost")[i].value = myCost;
-		subtotal += parseFloat(myCost);
+	function deliver(){
+		return document.getElementsByName("p_or_d")[1].checked;
 	}
-
-}
-
-tax = subtotal * 0.0625;
-total = subtotal + tax;
-
-document.getElementById("subtotal").value = subtotal.toFixed(2);
-
-document.getElementById("tax").value = tax.toFixed(2);
-
-document.getElementById("total").value = total.toFixed(2);
-
-}
-
-
-function checkFields(){
-
-	let numLength = document.getElementsByName("phone")[0].value.length;
-    if (numLength != 7) {
-		if (numLength != 10){ 
-        	alert("Phone numbers must have 7 or 10 digits");
-        	return;
-		}  
-    }
-
-    if (document.getElementsByName("lname")[0].value == ""){
-        alert("Please enter a last name");
-        return;
-    }
-
-	if (document.getElementsByName("fname")[0].value == "") {
-		alert("Please enter a first name");
-		return;
+	
+	
+	function showDeliverInfo(){
+	
+		if (deliver() == true){
+			document.getElementsByClassName("deliveryInfo")[0].style.display = "block";
+			document.getElementsByClassName("deliveryInfo")[1].style.display = "block";
+		} else {
+			document.getElementsByClassName("deliveryInfo")[0].style.display = "none";
+			document.getElementsByClassName("deliveryInfo")[1].style.display = "none";
+		}
 	}
-
-
-   
-    
-    currTime = new Date();
-	var oTime;
-
-    if (deliver() == true){
-        currTime.setMinutes(currTime.getMinutes() + 30);
-        oTime = currTime.getHours() + ":" + currTime.getMinutes();
-    } 
-	else {
-        currTime.setMinutes(currTime.getMinutes() + 15);
-        oTime = currTime.getHours() + ":" + currTime.getMinutes();
-    }
-    
-    if (deliver() == true){
-		if(document.getElementsByName("city")[0].value == "") {
-			alert("Please enter a city for delivery");
+	
+	function fillCost(){
+	
+	var subtotal = 0;
+	var quant = 0;
+	var myCost = 0;
+	var tax = 0;
+	var total = 0;
+	for (i = 0; i < menuItems.length; i++){
+		quant = document.getElementsByName("quan" + i)[0].value;
+	
+		if (parseInt(quant) != 0){
+			myCost = (parseInt(quant) * menuItems[i].cost);
+			myCost = myCost.toFixed(2);
+			document.getElementsByName("cost")[i].value = myCost;
+			subtotal += parseFloat(myCost);
+		}
+	
+	}
+	
+	tax = subtotal * 0.0625;
+	total = subtotal + tax;
+	
+	document.getElementById("subtotal").value = subtotal.toFixed(2);
+	
+	document.getElementById("tax").value = tax.toFixed(2);
+	
+	document.getElementById("total").value = total.toFixed(2);
+	
+	}
+	
+	
+	function checkFields(){
+	
+		let numLength = document.getElementsByName("phone")[0].value.length;
+		if (numLength != 7) {
+			if (numLength != 10){ 
+				alert("Phone numbers must have 7 or 10 digits");
+				return;
+			}  
+		}
+	
+		if (document.getElementsByName("lname")[0].value == ""){
+			alert("Please enter a last name");
 			return;
 		}
-        if (document.getElementsByName("street")[0].value == ""){
-            alert("Please enter an address for delivery");
-            return;
-        }
-    }
-   
-    var items = 0;
-
-    for (i = 0; i < menuItems.length; i++){
-        items += document.getElementsByName("quan" + i)[0].value;
-    }
-    if (items == 0){
-        alert("Please select an item to order!");
-        return;
-    }
-
-    alert("Order Recieved!")
-
-	var win = window.open("", "Order Summary");
-
-    summary = "<h1>Order Summary:</h1>";
-	for (i = 0; i < menuItems.length; i++){
-        if( document.getElementsByName("quan" + i)[0].value > 0) {
-			summary += document.getElementsByName("quan" + i)[0].value + " " + menuItems[i].name + ": $" + 
-			(document.getElementsByName("quan" + i)[0].value * menuItems[i].cost).toFixed(2) + "<br/>";
+	
+		if (document.getElementsByName("fname")[0].value == "") {
+			alert("Please enter a first name");
+			return;
 		}
-
-    }
-	summary+= "Subtotal: $" + document.getElementById("subtotal").value + "<br/>";
-	summary+= "Tax: $" + document.getElementById("tax").value + "<br/>";
-	summary+= "Total: $" + document.getElementById("total").value + "<br/>";
-	summary+= "<br/>";
-
-	if (deliver() == true) {
-		summary+= "Delivery time: " + oTime;
-	} else {
-		summary+= "Pickup time: " + oTime;
+	
+	
+	   
+		
+		currTime = new Date();
+		var oTime;
+	
+		if (deliver() == true){
+			currTime.setMinutes(currTime.getMinutes() + 30);
+			oTime = currTime.getHours() + ":" + currTime.getMinutes();
+		} 
+		else {
+			currTime.setMinutes(currTime.getMinutes() + 15);
+			oTime = currTime.getHours() + ":" + currTime.getMinutes();
+		}
+		
+		if (deliver() == true){
+			if(document.getElementsByName("city")[0].value == "") {
+				alert("Please enter a city for delivery");
+				return;
+			}
+			if (document.getElementsByName("street")[0].value == ""){
+				alert("Please enter an address for delivery");
+				return;
+			}
+		}
+	   
+		var items = 0;
+	
+		for (i = 0; i < menuItems.length; i++){
+			items += document.getElementsByName("quan" + i)[0].value;
+		}
+		if (items == 0){
+			alert("Please select an item to order!");
+			return;
+		}
+	
+		alert("Order Recieved")
+	
+		var win = window.open("", "Order Summary");
+	
+		summary = "<h1>Order Summary:</h1>";
+		for (i = 0; i < menuItems.length; i++){
+			if( document.getElementsByName("quan" + i)[0].value > 0) {
+				summary += document.getElementsByName("quan" + i)[0].value + " " + menuItems[i].name + ": $" + 
+				(document.getElementsByName("quan" + i)[0].value * menuItems[i].cost).toFixed(2) + "<br/>";
+			}
+	
+		}
+		summary+= "Subtotal: $" + document.getElementById("subtotal").value + "<br/>";
+		summary+= "Tax: $" + document.getElementById("tax").value + "<br/>";
+		summary+= "Total: $" + document.getElementById("total").value + "<br/>";
+		summary+= "<br/>";
+	
+		if (deliver() == true) {
+			summary+= "Delivery time: " + oTime;
+		} else {
+			summary+= "Pickup time: " + oTime;
+		}
+		win.document.body.innerHTML = summary;
+	
+	
+	
 	}
-	win.document.body.innerHTML = summary;
-
-
-
-}
-
-
-
 </script>
 
-</table>
 <p class="subtotal totalSection"><label>Subtotal</label>: 
    $ <input type="text"  name='subtotal' id="subtotal" />
 </p>
@@ -250,4 +242,15 @@ function checkFields(){
 
 </form>
 </body>
+
+
+<script>
+
+	document.getElementsByTagName("tbody")[0].addEventListener("change", fillCost);
+	document.getElementsByName("p_or_d")[0].addEventListener("change", deliver);
+	document.getElementsByName("p_or_d")[1].addEventListener("change", deliver);
+	document.querySelector("input[type='button']").addEventListener("click", checkFields);
+
+</script>
 </html>
+
